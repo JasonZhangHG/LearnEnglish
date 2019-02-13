@@ -32,7 +32,7 @@ public class MainActivity extends BaseActivity {
     private VideoFragment mVideoFragment;
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
-    private String[] mTitles = {"消息", "职业", "发现", "我的"};
+    private String[] mTitles = {"翻译", "阅读", "听力", "视频"};
     private int[] mIconUnselectIds = {R.drawable.icon_message_unpress, R.drawable.icon_job_unpress, R.drawable.icon_discover_unpress, R.drawable.icon_me_unpress};
     private int[] mIconSelectIds = {R.drawable.icon_message_press, R.drawable.icon_job_press, R.drawable.icon_discover_press, R.drawable.icon_me_press};
     private long firstBack = -1;
