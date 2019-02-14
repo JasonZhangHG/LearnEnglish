@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import java.util.Locale;
 
 import cool.android.english.base.CCApplication;
+import okio.Buffer;
 
 
 public class DeviceUtil {
@@ -68,6 +69,28 @@ public class DeviceUtil {
             if (appProcess.pid == pid) {return appProcess.processName;}
         }
         return null;
+    }
+
+    /**
+     * 处理header是中文的情况
+     *
+     * @param s
+     * @return Returns {@code s} with control characters and non-ASCII characters replaced with '?'
+     */
+    public static String toHumanReadableAscii(String s) {
+        for (int i = 0, length = s.length(), c; i < length; i += Character.charCount(c)) {
+            c = s.codePointAt(i);
+            if (c > '\u001f' && c < '\u007f') {continue;}
+
+            Buffer buffer = new Buffer();
+            buffer.writeUtf8(s, 0, i);
+            for (int j = i; j < length; j += Character.charCount(c)) {
+                c = s.codePointAt(j);
+                buffer.writeUtf8CodePoint(c > '\u001f' && c < '\u007f' ? c : '?');
+            }
+            return buffer.readUtf8();
+        }
+        return s;
     }
 
 
