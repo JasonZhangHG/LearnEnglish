@@ -8,6 +8,7 @@ import com.blankj.utilcode.util.LogUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cool.android.english.R;
 import cool.android.english.base.BaseActivity;
 import cool.android.english.bean.Listener;
@@ -17,8 +18,11 @@ public class PlayListenerActivity extends BaseActivity {
 
     @BindView(R.id.tv_title_play_listener) TextView mTitlePlayListener;
     @BindView(R.id.tv_introduce_play_listener) TextView mIntroducePlayListener;
+    @BindView(R.id.tv_cover_play_listener_activity) TextView mCoverPlayListenerActivity;
     private Listener mListener;
     private MediaPlayer mMediaPlayer;
+    private int mClickCount;
+    private boolean isOnPreparedListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +49,10 @@ public class PlayListenerActivity extends BaseActivity {
             mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
+                    isOnPreparedListener = true;
                     LogUtils.d("PlayListenerActivity playListener setOnPreparedListener");
                     mMediaPlayer.start();
+
                 }
             });
             mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -77,6 +83,17 @@ public class PlayListenerActivity extends BaseActivity {
         if (mMediaPlayer != null) {
             mMediaPlayer.stop();
             mMediaPlayer.release();
+        }
+    }
+
+    @OnClick(R.id.tv_cover_play_listener_activity)
+    public void onPauseClicked() {
+        if (!isOnPreparedListener) {return;}
+        mClickCount++;
+        if (mClickCount % 2 == 1 && mMediaPlayer != null) {
+            mMediaPlayer.pause();
+        } else if (mMediaPlayer != null && isOnPreparedListener) {
+            mMediaPlayer.start();
         }
     }
 }

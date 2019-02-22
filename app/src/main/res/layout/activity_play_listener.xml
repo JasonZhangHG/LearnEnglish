@@ -37,7 +37,14 @@
             android:text="introduce"
             android:textSize="16sp"/>
 
-
     </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_cover_play_listener_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"/>
+
 
 </RelativeLayout>

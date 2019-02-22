@@ -53,6 +53,10 @@
         <activity
             android:name=".activity.PlayListenerActivity"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".activity.PlayVideoActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
