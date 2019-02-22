@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.bmob.v3.Bmob;
 import cool.android.english.R;
 import cool.android.english.base.BaseActivity;
 import cool.android.english.base.TabEntity;
@@ -42,6 +43,8 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        //第一：默认初始化
+        Bmob.initialize(this, "50fce2799c4f7c973de087d7b2cf6f37");
         initTab();
         initFragment();
     }

@@ -22,6 +22,7 @@
     <color name="block_text_color">#f44336</color>
     <color name="first_name_remind_text_color">#f44336</color>
     <color name="new_first_name_remind_text_color">#ff6f6f</color>
+    <color name="attention_others_activity_log_in_text_color">#FF4D73FF</color>
 
     <!--不透明度黑白-->
     <color name="white">#FFFFFF</color>
@@ -66,6 +67,11 @@
     <color name="black_primary_lighter" tools:ignore="MissingDefaultResource">#1b1a1a</color>
     <color name="date_picker_dialog_bg_color">#263238</color>
     <color name="transparent">#00000000</color>
+
+    <color name="green1">#7ac194</color>
+    <color name="green2">#56bc7b</color>
+    <color name="green3">#24a251</color>
+    <color name="green4">#50056f00</color>
 
     <color name="match_report_focused">#3835ba</color>
     <color name="match_report_no_focused">#644AF1</color>
@@ -163,6 +169,23 @@
     <color name="change_message_time_color">#ff999999</color>
     <color name="change_message_line_color">#ffeeeeee</color>
     <color name="input_text_color">#ff131313</color>
+
+    <color name="feedback_activity_commit_background_color">#FFDD191D</color>
+    <color name="login_facebook_pressed">#DD3459E1</color>
+    <color name="login_facebook_normal">#DD4D73FF</color>
+    <color name="login_google_pressed">#FFB43D2F</color>
+    <color name="login_google_normal">#FFD85040</color>
+    <color name="logout_normal">#FFDD191D</color>
+    <color name="red_light">#ffff4444</color>
+    <color name="red_deep">#FFBF124D</color>
+    <color name="media_manage_activity_select">#ffb3b3b3</color>
+    <color name="works_info_fragment_attention_background">#00ffffff</color>
+    <color name="empty_page_text_color">#B2B2B2</color>
+    <color name="recyclerview_bg_color">#eeee</color>
+    <color name="video_manage_uploading_text_color">#9E9E9E</color>
+    <color name="video_manage_activity_select_all_text_color">#FFB300</color>
+    <color name="album_bg_color">#D8D8D8</color>
+    <color name="update_music_bg">#AB2C2C2C</color>
 
 
 </resources>
