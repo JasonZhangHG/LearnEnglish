@@ -36,7 +36,6 @@
             android:authorities="cool.android.english.BmobContentProvider">
         </provider>
 
-
         <activity
             android:name=".activity.MainActivity"
             android:screenOrientation="portrait">
@@ -49,6 +48,10 @@
 
         <activity
             android:name=".activity.BookReaderActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".activity.PlayListenerActivity"
             android:screenOrientation="portrait"/>
     </application>
 

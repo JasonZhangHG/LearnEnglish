@@ -21,7 +21,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
@@ -40,8 +39,6 @@ public class ReaderFragment extends Fragment implements View.OnTouchListener {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //第一：默认初始化
-        Bmob.initialize(getActivity(), "50fce2799c4f7c973de087d7b2cf6f37");
     }
 
     @Override
