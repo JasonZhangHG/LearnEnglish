@@ -10,6 +10,7 @@ import cool.android.english.activity.BookReaderActivity;
 import cool.android.english.activity.LoginActivity;
 import cool.android.english.activity.PlayListenerActivity;
 import cool.android.english.activity.PlayVideoActivity;
+import cool.android.english.activity.WebViewActivity;
 import cool.android.english.base.CCApplication;
 import cool.android.english.bean.Book;
 import cool.android.english.bean.Listener;
@@ -63,5 +64,14 @@ public class ActivityUtil {
             activity.startActivity(intent);
             activity.finish();
         }
+    }
+
+    public static void intentToWebViewActivity(Activity activity, String url) {
+        if (activity == null) {
+            return;
+        }
+        Intent intent = new Intent(activity, WebViewActivity.class);
+        intent.putExtra(AppConstant.IntentKey.INTENT_TO_WEBVIEW_ACTIVITY_WITH_URL, url);
+        activity.startActivity(intent);
     }
 }

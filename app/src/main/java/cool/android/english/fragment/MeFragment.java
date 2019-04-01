@@ -20,6 +20,7 @@ import cool.android.english.R;
 import cool.android.english.activity.ChangePwdActivity;
 import cool.android.english.bean.CurrentUser;
 import cool.android.english.dialog.LogoutDialog;
+import cool.android.english.utils.ActivityUtil;
 import cool.android.english.utils.CurrentUserHelper;
 
 
@@ -84,7 +85,7 @@ public class MeFragment extends Fragment implements View.OnTouchListener {
 
     @OnClick(R.id.tv_my_order)
     public void myOrderClicked() {
-//        startActivity(new Intent(getActivity(), MyOrderActivity.class));
+        ActivityUtil.intentToWebViewActivity(getActivity(), "https://tiku.21cnjy.com/tiku.php?mod=list&channel=4&xd=2");
     }
 
     @OnClick(R.id.tv_logout)
