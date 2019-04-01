@@ -17,6 +17,7 @@ import cool.android.english.R;
 import cool.android.english.base.BaseActivity;
 import cool.android.english.base.TabEntity;
 import cool.android.english.fragment.ListenerFragment;
+import cool.android.english.fragment.MeFragment;
 import cool.android.english.fragment.ReaderFragment;
 import cool.android.english.fragment.TranslateFragment;
 import cool.android.english.fragment.VideoFragment;
@@ -31,11 +32,13 @@ public class MainActivity extends BaseActivity {
     private ReaderFragment mReaderFragment;
     private ListenerFragment mListenerFragment;
     private VideoFragment mVideoFragment;
+    private MeFragment mMeFragment;
+
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
 
-    private String[] mTitles = {"翻译", "阅读", "听力", "视频"};
-    private int[] mIconUnselectIds = {R.drawable.icon_message_unpress, R.drawable.icon_job_unpress, R.drawable.icon_discover_unpress, R.drawable.icon_me_unpress};
-    private int[] mIconSelectIds = {R.drawable.icon_message_press, R.drawable.icon_job_press, R.drawable.icon_discover_press, R.drawable.icon_me_press};
+    private String[] mTitles = {"翻译", "阅读", "听力", "视频", "我的"};
+    private int[] mIconUnselectIds = {R.drawable.icon_message_unpress, R.drawable.icon_job_unpress, R.drawable.icon_discover_unpress, R.drawable.icon_me_unpress, R.drawable.icon_me_unpress};
+    private int[] mIconSelectIds = {R.drawable.icon_message_press, R.drawable.icon_job_press, R.drawable.icon_discover_press, R.drawable.icon_me_press, R.drawable.icon_me_press};
     private long firstBack = -1;
 
     @Override
@@ -85,6 +88,11 @@ public class MainActivity extends BaseActivity {
             mVideoFragment = new VideoFragment();
             transaction.add(R.id.ll_main_activity, mVideoFragment);
         }
+
+        if (mMeFragment == null) {
+            mMeFragment = new MeFragment();
+            transaction.add(R.id.ll_main_activity, mMeFragment);
+        }
         transaction.commit();
         SwitchTo(currentTabPosition);
         mCommonTabLayout.setCurrentTab(currentTabPosition);
@@ -98,6 +106,7 @@ public class MainActivity extends BaseActivity {
                 transaction.hide(mReaderFragment);
                 transaction.hide(mListenerFragment);
                 transaction.hide(mVideoFragment);
+                transaction.hide(mMeFragment);
                 transaction.commitAllowingStateLoss();
                 break;
             case 1:
@@ -105,6 +114,7 @@ public class MainActivity extends BaseActivity {
                 transaction.hide(mTranslateFragment);
                 transaction.hide(mListenerFragment);
                 transaction.hide(mVideoFragment);
+                transaction.hide(mMeFragment);
                 transaction.commitAllowingStateLoss();
                 break;
             case 2:
@@ -112,10 +122,20 @@ public class MainActivity extends BaseActivity {
                 transaction.hide(mTranslateFragment);
                 transaction.hide(mReaderFragment);
                 transaction.hide(mVideoFragment);
+                transaction.hide(mMeFragment);
                 transaction.commitAllowingStateLoss();
                 break;
             case 3:
                 transaction.show(mVideoFragment);
+                transaction.hide(mTranslateFragment);
+                transaction.hide(mReaderFragment);
+                transaction.hide(mListenerFragment);
+                transaction.hide(mMeFragment);
+                transaction.commitAllowingStateLoss();
+                break;
+            case 4:
+                transaction.show(mMeFragment);
+                transaction.hide(mVideoFragment);
                 transaction.hide(mTranslateFragment);
                 transaction.hide(mReaderFragment);
                 transaction.hide(mListenerFragment);

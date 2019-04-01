@@ -4,10 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 
+import cn.bmob.v3.BmobUser;
 import cool.android.english.R;
 import cool.android.english.activity.BookReaderActivity;
+import cool.android.english.activity.LoginActivity;
 import cool.android.english.activity.PlayListenerActivity;
 import cool.android.english.activity.PlayVideoActivity;
+import cool.android.english.base.CCApplication;
 import cool.android.english.bean.Book;
 import cool.android.english.bean.Listener;
 import cool.android.english.bean.VideoBean;
@@ -46,5 +49,19 @@ public class ActivityUtil {
         intent.putExtra(AppConstant.IntentKey.EXTRA_DATA, videoBean);
         fragment.startActivity(intent);
         fragment.getActivity().overridePendingTransition(R.anim.enter_from_right, R.anim.slide_in_from_middle_to_middle);
+    }
+
+    public static void startLoginActivity(Activity activity) {
+        BmobUser.logOut();
+        CurrentUserHelper.getInstance().updateCurrentUser(null);
+        if (activity == null) {
+            Intent intent = new Intent(CCApplication.getInstance(), LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            CCApplication.getInstance().startActivity(intent);
+        } else {
+            Intent intent = new Intent(activity, LoginActivity.class);
+            activity.startActivity(intent);
+            activity.finish();
+        }
     }
 }
