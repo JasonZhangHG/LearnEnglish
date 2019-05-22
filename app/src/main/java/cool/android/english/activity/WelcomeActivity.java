@@ -17,14 +17,20 @@ public class WelcomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         Bmob.initialize(this, "50fce2799c4f7c973de087d7b2cf6f37");
-        if (BmobUser.isLogin()) {
-            CurrentUser currentUser = BmobUser.getCurrentUser(CurrentUser.class);
-            CurrentUserHelper.getInstance().updateCurrentUser(currentUser);
-            toActivity(MainActivity.class);
-            finish();
-        } else {
-            toActivity(LoginActivity.class);
-            finish();
-        }
+        doInUI(new Runnable() {
+            @Override
+            public void run() {
+                if (BmobUser.isLogin()) {
+                    CurrentUser currentUser = BmobUser.getCurrentUser(CurrentUser.class);
+                    CurrentUserHelper.getInstance().updateCurrentUser(currentUser);
+                    toActivity(MainActivity.class);
+                    finish();
+                } else {
+                    toActivity(LoginActivity.class);
+                    finish();
+                }
+            }
+        }, 1000);
+
     }
 }

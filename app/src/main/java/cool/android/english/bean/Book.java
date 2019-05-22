@@ -8,6 +8,7 @@ public class Book extends BmobObject {
     private String introduce;
     private String value;
     private String writer;
+    private String cover;
 
     public String getTitle() {
         return title;
@@ -41,6 +42,14 @@ public class Book extends BmobObject {
         this.writer = writer;
     }
 
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -48,6 +57,7 @@ public class Book extends BmobObject {
                 ", introduce='" + introduce + '\'' +
                 ", value='" + value + '\'' +
                 ", writer='" + writer + '\'' +
+                ", cover='" + cover + '\'' +
                 '}';
     }
 }

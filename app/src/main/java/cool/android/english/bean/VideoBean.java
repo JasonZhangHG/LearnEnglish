@@ -7,6 +7,7 @@ public class VideoBean extends BmobObject {
     private String title;
     private String introduce;
     private String value;
+    private String cover;
 
     public String getTitle() {
         return title;
@@ -32,12 +33,21 @@ public class VideoBean extends BmobObject {
         this.value = value;
     }
 
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
     @Override
     public String toString() {
         return "VideoBean{" +
                 "title='" + title + '\'' +
                 ", introduce='" + introduce + '\'' +
                 ", value='" + value + '\'' +
+                ", cover='" + cover + '\'' +
                 '}';
     }
 }

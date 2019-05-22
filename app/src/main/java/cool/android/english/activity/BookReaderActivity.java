@@ -1,6 +1,7 @@
 package cool.android.english.activity;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -42,6 +43,7 @@ public class BookReaderActivity extends BaseActivity {
         mTitle.setText(mBook.getTitle());
         mWriter.setText(mBook.getWriter());
         mBookValue.setText(mBook.getValue());
+        mBookValue.setMovementMethod(ScrollingMovementMethod.getInstance());
     }
 
     @OnClick(R.id.btn_chang_night_read_book_activity)
