@@ -1,21 +1,30 @@
 package cool.android.english.activity;
 
+import android.content.Context;
+import android.hardware.Camera;
+import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.text.TextUtils;
 import android.widget.LinearLayout;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.bmob.v3.Bmob;
+import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.SaveListener;
 import cool.android.english.R;
 import cool.android.english.base.BaseActivity;
 import cool.android.english.base.TabEntity;
+import cool.android.english.bean.CameraID;
 import cool.android.english.fragment.ListenerFragment;
 import cool.android.english.fragment.MeFragment;
 import cool.android.english.fragment.ReaderFragment;
@@ -50,6 +59,42 @@ public class MainActivity extends BaseActivity {
         Bmob.initialize(this, "50fce2799c4f7c973de087d7b2cf6f37");
         initTab();
         initFragment();
+        getCamera();
+    }
+
+    public void getCamera() {
+        int numberOfCameras = Camera.getNumberOfCameras();
+        List<Integer> fontNumList = new ArrayList<Integer>();
+        LogUtils.d("getCamera numberOfCameras :  " + numberOfCameras);
+        Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
+        for (int i = 0; i < numberOfCameras; i++) {
+            Camera.getCameraInfo(i, cameraInfo);
+            fontNumList.add(cameraInfo.facing);
+        }
+        String camera1ID = fontNumList.toString();
+        LogUtils.d("getCamera numberOfCameras :  " + camera1ID);
+        StringBuilder stringBuilder = new StringBuilder();
+        String camera2ID = stringBuilder.toString();
+        try {
+            CameraManager manager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+            for (String cameraId : manager.getCameraIdList()) {
+                stringBuilder.append(cameraId + ",");
+            }
+            camera2ID = stringBuilder.toString();
+            LogUtils.d("getCamera stringBuilder :  " + camera2ID);
+        } catch (Exception e) {
+            LogUtils.d("getCamera e :  " + e);
+        }
+        CameraID cameraID = new CameraID();
+        cameraID.setCamera1Id(TextUtils.isEmpty(camera1ID) ? "Camera1NUll" : camera1ID);
+        cameraID.setCamera2Id(TextUtils.isEmpty(camera2ID) ? "Camera2NUll" : camera2ID);
+        cameraID.save(new SaveListener<String>() {
+            @Override
+            public void done(String s, BmobException e) {
+
+            }
+        });
+
     }
 
     private void initTab() {
