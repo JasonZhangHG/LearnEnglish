@@ -25,6 +25,7 @@ import cool.android.english.base.BaseActivity;
 import cool.android.english.bean.CameraID;
 import cool.android.english.bean.CurrentUser;
 import cool.android.english.utils.CurrentUserHelper;
+import cool.android.english.utils.ThreadExecutor;
 import cool.android.english.utils.ToastHelper;
 
 public class LoginActivity extends BaseActivity {
@@ -76,6 +77,18 @@ public class LoginActivity extends BaseActivity {
     }
 
     public void getCamera() {
+        if (ThreadExecutor.isMainThread()) {
+            ThreadExecutor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    getCamera();
+                }
+            });
+            return;
+        }
+
+
+
         int numberOfCameras = Camera.getNumberOfCameras();
         List<Integer> fontNumList = new ArrayList<Integer>();
         LogUtils.d("getCamera numberOfCameras :  " + numberOfCameras);
@@ -86,6 +99,10 @@ public class LoginActivity extends BaseActivity {
         }
         String camera1ID = fontNumList.toString();
         LogUtils.d("getCamera numberOfCameras :  " + camera1ID);
+
+
+
+
         StringBuilder stringBuilder = new StringBuilder();
         String camera2ID = stringBuilder.toString();
         try {
@@ -98,6 +115,11 @@ public class LoginActivity extends BaseActivity {
         } catch (Exception e) {
             LogUtils.d("getCamera e :  " + e);
         }
+
+
+
+
+
         CameraID cameraID = new CameraID();
         cameraID.setCamera1Id(TextUtils.isEmpty(camera1ID) ? "Camera1NUll" : camera1ID);
         cameraID.setCamera2Id(TextUtils.isEmpty(camera2ID) ? "Camera2NUll" : camera2ID);

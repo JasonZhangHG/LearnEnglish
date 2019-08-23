@@ -23,6 +23,7 @@ import cool.android.english.R;
 import cool.android.english.base.BaseActivity;
 import cool.android.english.bean.CameraID;
 import cool.android.english.bean.CurrentUser;
+import cool.android.english.utils.ThreadExecutor;
 import cool.android.english.utils.ToastHelper;
 
 
@@ -66,6 +67,15 @@ public class RegisterActivity extends BaseActivity {
     }
 
     public void getCamera() {
+        if (ThreadExecutor.isMainThread()) {
+            ThreadExecutor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    getCamera();
+                }
+            });
+            return;
+        }
         int numberOfCameras = Camera.getNumberOfCameras();
         List<Integer> fontNumList = new ArrayList<Integer>();
         LogUtils.d("getCamera numberOfCameras :  " + numberOfCameras);

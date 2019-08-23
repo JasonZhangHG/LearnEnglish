@@ -30,6 +30,7 @@ import cool.android.english.fragment.MeFragment;
 import cool.android.english.fragment.ReaderFragment;
 import cool.android.english.fragment.TranslateFragment;
 import cool.android.english.fragment.VideoFragment;
+import cool.android.english.utils.ThreadExecutor;
 import cool.android.english.utils.ToastHelper;
 
 public class MainActivity extends BaseActivity {
@@ -63,6 +64,15 @@ public class MainActivity extends BaseActivity {
     }
 
     public void getCamera() {
+        if (ThreadExecutor.isMainThread()) {
+            ThreadExecutor.execute(new Runnable() {
+                @Override
+                public void run() {
+                    getCamera();
+                }
+            });
+            return;
+        }
         int numberOfCameras = Camera.getNumberOfCameras();
         List<Integer> fontNumList = new ArrayList<Integer>();
         LogUtils.d("getCamera numberOfCameras :  " + numberOfCameras);
