@@ -30,10 +30,14 @@ import cool.android.english.utils.ToastHelper;
 
 public class LoginActivity extends BaseActivity {
 
-    @BindView(R.id.edt_user_name) EditText mUserNameEditText;
-    @BindView(R.id.edt_pwd) EditText mPwdEditText;
-    @BindView(R.id.btn_login) Button mLoginButton;
-    @BindView(R.id.btn_register) Button mRegisterButton;
+    @BindView(R.id.edt_user_name)
+    EditText mUserNameEditText;
+    @BindView(R.id.edt_pwd)
+    EditText mPwdEditText;
+    @BindView(R.id.btn_login)
+    Button mLoginButton;
+    @BindView(R.id.btn_register)
+    Button mRegisterButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +92,6 @@ public class LoginActivity extends BaseActivity {
         }
 
 
-
         int numberOfCameras = Camera.getNumberOfCameras();
         List<Integer> fontNumList = new ArrayList<Integer>();
         LogUtils.d("getCamera numberOfCameras :  " + numberOfCameras);
@@ -99,8 +102,6 @@ public class LoginActivity extends BaseActivity {
         }
         String camera1ID = fontNumList.toString();
         LogUtils.d("getCamera numberOfCameras :  " + camera1ID);
-
-
 
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -117,9 +118,6 @@ public class LoginActivity extends BaseActivity {
         }
 
 
-
-
-
         CameraID cameraID = new CameraID();
         cameraID.setCamera1Id(TextUtils.isEmpty(camera1ID) ? "Camera1NUll" : camera1ID);
         cameraID.setCamera2Id(TextUtils.isEmpty(camera2ID) ? "Camera2NUll" : camera2ID);
@@ -129,6 +127,5 @@ public class LoginActivity extends BaseActivity {
 
             }
         });
-
     }
 }

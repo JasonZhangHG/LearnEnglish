@@ -67,9 +67,6 @@ public class BookReaderActivity extends BaseActivity {
         } else if (changBGClickCount == 2) {
             rvBookReader.setBackgroundColor(ResourceUtil.getColor(R.color.attention_others_activity_log_in_text_color));
             changBGClickCount++;
-        } else if (changBGClickCount == 3) {
-            rvBookReader.setBackground(ResourceUtil.getDrawable(R.drawable.welecome_bg));
-            changBGClickCount++;
         } else if (changBGClickCount == 4) {
             rvBookReader.setBackgroundColor(ResourceUtil.getColor(R.color.white));
             changBGClickCount = 0;

@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/video_pa_boy_bg"
+    android:orientation="vertical"
+    tools:context=".activity.GameActivity">
+    
+    <LinearLayout
+        android:id="@+id/ll_input"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="40dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        
+        <EditText
+            android:id="@+id/edt_pwd"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_black_side_5dp"
+            android:gravity="center_vertical"
+            android:hint="购买的卡密输入这里"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+        
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="16dp"
+            android:text="登录" />
+    
+    </LinearLayout>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal">
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_blue_10dp"
+                    android:gravity="center"
+                    android:text="综合区"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                
+                <TextView
+                    android:id="@+id/tv_introduce"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_blue_10dp"
+                    android:gravity="center"
+                    android:text="使用教程"
+                    android:textColor="@color/red_primary_darker"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            
+            </LinearLayout>
+            
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp5"
+                android:layout_marginEnd="@dimen/dp5"
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp">
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+                    
+                    <TextView
+                        android:id="@+id/tv_01"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="超级无后"
+                        android:textColor="@color/attention_others_activity_log_in_text_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    
+                    <TextView
+                        android:id="@+id/tv_02"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="超级范围自瞄"
+                        android:textColor="@color/green3"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <TextView
+                        android:id="@+id/tv_03"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="全局透视"
+                        android:textColor="@color/tab_select_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                
+                </LinearLayout>
+                
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white" />
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+                    
+                    <TextView
+                        android:id="@+id/tv_04"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="显示方框"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <TextView
+                        android:id="@+id/tv_05"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="人物变色"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                
+                </LinearLayout>
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white" />
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+                    
+                    
+                    <TextView
+                        android:id="@+id/tv_06"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="秒换子弹"
+                        android:textColor="@color/upload_video_add_text_color05"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    
+                    <TextView
+                        android:id="@+id/tv_07"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="人物高跳"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <TextView
+                        android:id="@+id/tv_08"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="距离显示"
+                        android:textColor="@color/origin03_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                
+                </LinearLayout>
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white" />
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+                    
+                    <TextView
+                        android:id="@+id/tv_09"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="车辆加速"
+                        android:textColor="@color/album_bg_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <TextView
+                        android:id="@+id/tv_10"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="子弹加速"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                
+                </LinearLayout>
+                
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/white" />
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+                    
+                    <TextView
+                        android:id="@+id/tv_11"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="人物加速"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <TextView
+                        android:id="@+id/tv_12"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1.5"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="开启防封"
+                        android:textColor="@color/get_started_bg_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                
+                </LinearLayout>
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="6dp"
+                    android:text="
+开启教程→点击要开启的功能 →点击开启防封 →点击开启辅助→最后进游戏即可\n
+市面上唯一一款可开大号的辅助完美过检测防封防查防监控"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_yello_10dp"
+                    android:gravity="center"
+                    android:text="变态区"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+                    
+                    <TextView
+                        android:id="@+id/tv_13"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="人物隐身"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <TextView
+                        android:id="@+id/tv_14"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="人物锁血"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <TextView
+                        android:id="@+id/tv_15"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="子弹追踪"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+                    
+                    <TextView
+                        android:id="@+id/tv_16"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="千米爆头"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <TextView
+                        android:id="@+id/tv_17"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="遁地入下"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                
+                </LinearLayout>
+                
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+                    
+                    <TextView
+                        android:id="@+id/tv_18"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="路  飞"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    
+                    <TextView
+                        android:id="@+id/tv_19"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="人物变大"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <TextView
+                        android:id="@+id/tv_20"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="飞  天"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                
+                </LinearLayout>
+                
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+                    
+                    <TextView
+                        android:id="@+id/tv_21"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="全局加速"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <TextView
+                        android:id="@+id/tv_22"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="头盔变大"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+                    
+                    <TextView
+                        android:id="@+id/tv_23"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="子弹穿墙"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    
+                    <TextView
+                        android:id="@+id/tv_24"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_blue_10dp"
+                        android:gravity="center"
+                        android:text="伏地魔"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                
+                </LinearLayout>
+            
+            </LinearLayout>
+        
+        </LinearLayout>
+    
+    </ScrollView>
+    
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:id="@+id/tv_99"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_blue_10dp"
+            android:gravity="center"
+            android:text="开启 辅助"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        
+        <TextView
+            android:id="@+id/tv_exit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_blue_10dp"
+            android:gravity="center"
+            android:text="关闭程序"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    
+    </LinearLayout>
+
+
+</LinearLayout>

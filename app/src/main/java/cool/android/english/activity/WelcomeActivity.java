@@ -7,7 +7,6 @@ import com.blankj.utilcode.util.PermissionUtils;
 
 import java.util.List;
 
-import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobUser;
 import cool.android.english.R;
 import cool.android.english.base.BaseActivity;
@@ -21,8 +20,9 @@ public class WelcomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        Bmob.initialize(this, "50fce2799c4f7c973de087d7b2cf6f37");
-        getPermission();
+        toActivity(GameActivity.class);
+//        getPermission();
+        finish();
     }
 
     public void getPermission() {
