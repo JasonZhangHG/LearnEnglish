@@ -37,9 +37,10 @@
             android:authorities="cool.android.english.BmobContentProvider"></provider>
         
         <activity
-            android:name=".activity.WelcomeActivity"
+            android:name=".activity.GameActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/AppTheme">
             
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,11 +71,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.WebViewActivity"
-            android:screenOrientation="portrait" />
-        
-        <activity
-            android:name=".activity.GameActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
     
     </application>

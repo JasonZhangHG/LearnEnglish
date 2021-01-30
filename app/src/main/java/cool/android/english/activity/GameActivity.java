@@ -22,6 +22,7 @@ import butterknife.OnClick;
 import cool.android.english.R;
 import cool.android.english.base.BaseActivity;
 import cool.android.english.base.ICallback;
+import cool.android.english.dialog.OpenErrorDialog;
 import cool.android.english.utils.ActivityUtil;
 import cool.android.english.utils.ToastHelper;
 
@@ -36,6 +37,8 @@ public class GameActivity extends BaseActivity {
 
     private String mNetPwd;
     private boolean isLoginSuccess;
+
+    private OpenErrorDialog mOpenErrorDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,6 +140,12 @@ public class GameActivity extends BaseActivity {
     public void onItemClicked() {
         if (isLoginSuccess) {
             ToastHelper.showShortMessage("正在写入，请稍等");
+            mInputAllView.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    showOpenErrorDialog();
+                }
+            }, 3000);
         } else {
             ToastHelper.showShortMessage("请先登录");
         }
@@ -150,5 +159,12 @@ public class GameActivity extends BaseActivity {
     @OnClick(R.id.tv_exit)
     public void onExitClicked() {
         finish();
+    }
+
+    public void showOpenErrorDialog() {
+        if (mOpenErrorDialog == null) {
+            mOpenErrorDialog = new OpenErrorDialog();
+        }
+        mOpenErrorDialog.tryShow(getSupportFragmentManager());
     }
 }
