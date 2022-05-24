@@ -34,20 +34,34 @@
         
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
-            android:authorities="cool.android.english.BmobContentProvider"></provider>
+            android:authorities="cool.android.english.BmobContentProvider" />
+        
+        <activity
+            android:name=".activity.TransLateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
         
         <activity
             android:name=".activity.GameActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
-            
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+            <!--                -->
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
         </activity>
+        
+        
         <activity
             android:name=".activity.BookReaderActivity"
             android:screenOrientation="portrait" />
@@ -72,7 +86,6 @@
         <activity
             android:name=".activity.WebViewActivity"
             android:screenOrientation="portrait" />
-    
     </application>
 
 </manifest>
